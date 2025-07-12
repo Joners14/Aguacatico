@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Para Ti 🥑</title>
+  <style>
+    body {
+      background: #e6ffe6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #339966;
+      font-size: 3em;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      margin: 20px 0;
+    }
+
+    .avocado {
+      position: absolute;
+      font-size: 2em;
+      animation: float 4s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🥑 Unoshhh Beshhitosshh En Eshaaa Frenteshhita Mi Gabishiitaaa... 
+    Posdate: Eres mi aguacatito favorito 🥑</h1>
+
+  <img src="fotosg.jpg" alt="Foto especial" />
+
+  <script>
+    function createAvocado() {
+      const avocado = document.createElement('div');
+      avocado.classList.add('avocado');
+      avocado.innerHTML = '🥑';
+      avocado.style.left = Math.random() * 100 + 'vw';
+      avocado.style.animationDuration = 2 + Math.random() * 3 + 's';
+      document.body.appendChild(avocado);
+
+      setTimeout(() => {
+        avocado.remove();
+      }, 5000);
+    }
+
+    setInterval(createAvocado, 300);
+  </script>
+</body>
+</html>
